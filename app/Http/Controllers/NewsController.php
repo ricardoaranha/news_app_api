@@ -47,7 +47,7 @@ class NewsController extends Controller
     public function create(Request $request)
     {
         $data = $request->only($this->model->getFillable());
-        
+
         DB::beginTransaction();
 
         try 
@@ -72,11 +72,11 @@ class NewsController extends Controller
         return response('News successfully created.', 200);
     }
 
-    public function update(NewsRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $record = $this->model->findOrFail($id);
         $data = $request->only($this->model->getFillable());
-
+        dd($data);
         DB::beginTransaction();
 
         try 

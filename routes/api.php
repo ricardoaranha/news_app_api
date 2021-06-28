@@ -18,16 +18,16 @@ use App\Http\Controllers\TagsController;
 
 Route::group(['prefix' => '/news'], function() {
     Route::get('/', [NewsController::class, 'index']);
-    Route::get('/{id}', [NewsController::class, 'details'])->where('id', '[0-9]');
+    Route::get('/{id}', [NewsController::class, 'details'])->where('id', '[0-9]+');
     Route::post('/', [NewsController::class, 'create']);
-    Route::put('/{id}', [NewsController::class, 'update'])->where('id', '[0-9]');
-    Route::delete('/{id}', [NewsController::class, 'delete'])->where('id', '[0-9]');
+    Route::put('/{id}', [NewsController::class, 'update'])->where('id', '[0-9]+');
+    Route::delete('/{id}', [NewsController::class, 'delete'])->where('id', '[0-9]+');
 });
 
 Route::group(['prefix' => '/tags'], function() {
     Route::get('/', [TagsController::class, 'index']);
-    Route::get('/{id}', [TagsController::class, 'details'])->where('id', '[0-9]');
+    Route::get('/{id}', [TagsController::class, 'details'])->where('id', '[0-9]+');
     Route::post('/', [TagsController::class, 'create']);
-    Route::put('/{id}', [TagsController::class, 'update'])->where('id', '[0-9]');
-    Route::delete('/{id}', [TagsController::class, 'delete'])->where('id', '[0-9]');
+    Route::put('/{id}', [TagsController::class, 'update'])->where('id', '[0-9]+');
+    Route::delete('/{id}', [TagsController::class, 'delete'])->where('id', '[0-9]+');
 });

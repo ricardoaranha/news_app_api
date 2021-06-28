@@ -18,7 +18,6 @@ class NewsTable extends Migration
             $table->string('banner')->nullable(true);
             $table->string('title');
             $table->longText('content');
-            $table->integer('votes')->default(0)->unsigned();
             $table->boolean('is_published');
             $table->timestamps();
             $table->softDeletes();
